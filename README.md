@@ -37,6 +37,22 @@ uvicorn main:app --reload
 
 The API will now be running locally at `http://127.0.0.1:8000`.
 
+## Running with Docker
+
+You can also run this application in an isolated container using Docker.
+
+1. **Build the Docker Image**:
+   ```bash
+   docker build -t gnani-stt-api .
+   ```
+
+2. **Run the Docker Container** (make sure to pass your `.env` file):
+   ```bash
+   docker run -d -p 8000:8000 --env-file .env --name gnani-api gnani-stt-api
+   ```
+
+The API and Web UI will now be available at `http://localhost:8000`.
+
 ## Web Interface (UI)
 
 The application comes with a built-in modern Web UI. Once the server is running, simply navigate to `http://127.0.0.1:8000/` in your browser.
